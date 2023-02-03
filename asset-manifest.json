@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/horizon-city/static/css/main.073c9b0a.css",
+    "main.js": "/horizon-city/static/js/main.2d4e73e6.js",
+    "static/js/787.1d2ae7f7.chunk.js": "/horizon-city/static/js/787.1d2ae7f7.chunk.js",
+    "service-worker.js": "/horizon-city/service-worker.js",
+    "static/media/logo.svg": "/horizon-city/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/horizon-city/index.html",
+    "main.073c9b0a.css.map": "/horizon-city/static/css/main.073c9b0a.css.map",
+    "main.2d4e73e6.js.map": "/horizon-city/static/js/main.2d4e73e6.js.map",
+    "787.1d2ae7f7.chunk.js.map": "/horizon-city/static/js/787.1d2ae7f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.2d4e73e6.js"
+  ]
+}
