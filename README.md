@@ -1,4 +1,6 @@
--Feature 1: Filter Events by City
+# City events app leveraging Google Calendar API
+
+# Feature 1: Filter Events by City
 
 Scenario 1 : When user hasn’t searched for a city, show upcoming events from all cities.
 
@@ -28,7 +30,7 @@ Then their city should be changed to that city (i.e., “Berlin, Germany”)
 
 And the user should receive a list of upcoming events in that city
 
-Feature 2 : Show or Hide an event’s details
+# Feature 2 : Show or Hide an event’s details
 
 Scenario 1 : An Event Element is collapsed by default
 
@@ -54,7 +56,8 @@ When: User no longer needs to the info being displayed or is not interested in t
 
 Then: The expanded details will collapse returning the event to it’s reduced, unclicked state.
 
-Feature 3: Specify number of events
+# Feature 3: Specify number of events
+
 Scenario 1: User has not specified events list length so it defaults to 32
 
 Given: No number has been entered or selected to reduce the total events displayed.
@@ -71,7 +74,7 @@ When: User is trying to narrow their search criteria or view the events in small
 
 Then: The UI updates to display only the specified number of events.
 
-Feature 4 : Show or Hide an event’s details
+# Feature 4 : Show or Hide an event’s details
 
 Scenario 1: User can access offline version of app with cached data
 
@@ -89,7 +92,8 @@ When: User is needs to update their search criteria or change it entirely to a d
 
 Then: Error message is alerted to user explaining that these changes can’t be made until internet access is restored.
 
-Feature 5: Data visualization
+# Feature 5: Data visualization
+
 Scenario 1: Show a chart with upcoming events in each city
 
 Given: User clicks a “display chart view” from the toolbar.
