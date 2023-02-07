@@ -51,7 +51,7 @@ module.exports.getAccessToken = async (event) =>{
 
     const code = decodeURIComponent(`${event.pathParameters.code}`);
 
-    return new Promise ((resolve, reject)=>{
+    return new Promise ((resolve, reject) => {
         oAuth2Client.getToken(code, (err, token)=>{
             if(err){
                 return reject(err);
