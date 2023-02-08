@@ -5,7 +5,7 @@ import { mockData } from '../mock_data';
 import { extractLocations } from '../api';
 
 
-// 7 tests on the CitySearch component logic
+//tests on the CitySearch component logic
 describe("<CitySearch /> component", ()=>{
     let locations, CitySearchWrapper;
     beforeAll(()=>{
