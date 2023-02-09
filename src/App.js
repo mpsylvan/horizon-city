@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import EventList from "./EventList";
-import CitySearch from './CitySearch';
-import NumberOfEvents from './NumberOfEvents';
-import './App.css';
+import CitySearch from "./CitySearch";
+import NumberOfEvents from "./NumberOfEvents";
+import "./App.css";
 
-// the root component  
+// the root component
 
 class App extends Component {
-  render(){
+  render() {
     return (
       <div className="App">
         <CitySearch />
