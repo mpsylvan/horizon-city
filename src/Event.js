@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { mockData } from "./mock_data";
 
 /* 
 
@@ -25,14 +24,15 @@ class Event extends Component {
   };
 
   render() {
+    const { event } = this.props;
     return (
       <>
-        <h3 className="eventTitle">{mockData[0].summary}</h3>
+        <h3 className="eventTitle">{event.summary}</h3>
         <p className="eventTime">
-          {mockData[0].start.dateTime}({mockData[0].start.timeZone})
+          {event.start.dateTime}({event.start.timeZone})
         </p>
         <p className="eventLocation">
-          @{mockData[0].summary}||{mockData[0].location}
+          @{event.summary}||{event.location}
         </p>
 
         {!this.state.details ? (
@@ -50,10 +50,10 @@ class Event extends Component {
               Collapse Details
             </button>
             <h4 className="aboutHeader">About this event:</h4>
-            <a className="calendarLink" href={mockData[0].htmlLink}>
+            <a className="calendarLink" href={event.htmlLink}>
               See details on Google Calendar
             </a>
-            <p className="eventDescription">{mockData[0].description}</p>
+            <p className="eventDescription">{event.description}</p>
           </div>
         )}
       </>
