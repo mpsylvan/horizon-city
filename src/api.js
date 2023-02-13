@@ -1,7 +1,6 @@
 // utility file for all api calls and processing functions
 import { mockData } from "./mock_data";
 import axios from "axios";
-import NProgress from "nprogress";
 
 export const extractLocations = (events) => {
   var extractLocations = events.map((event) => event.location);
@@ -49,10 +48,7 @@ export const removeQuery = () => {
 };
 
 export const getEvents = async () => {
-  NProgress.start();
-
   if (window.location.href.startsWith("http://localhost")) {
-    NProgress.done();
     return mockData;
   }
 
@@ -67,7 +63,7 @@ export const getEvents = async () => {
       localStorage.setItem("lastEvents", JSON.stringify(result.data));
       localStorage.setItem("locations", JSON.stringify(locations));
     }
-    NProgress.done();
+
     return result.data.events;
   }
 };
