@@ -3,7 +3,6 @@ import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import "./App.css";
-import "./nprogress.css";
 import { extractLocations, getEvents } from "./api";
 
 // the root component

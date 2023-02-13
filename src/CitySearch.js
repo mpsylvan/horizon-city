@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class CitySearch extends Component {
   // shorthand syntax for initializing state variables in class component
   state = {
-    query: "",
+    query: "search for a city",
     suggestions: [],
     showSuggestions: undefined,
   };
