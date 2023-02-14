@@ -1,15 +1,17 @@
-import React from "react";
-// import ReactDOM from "react-dom/client";
-import { render } from "react-dom";
-import "./index.css";
-import App from "./App";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import reportWebVitals from "./reportWebVitals";
+import React from 'react';
+// import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import reportWebVitals from './reportWebVitals';
 
-const root = document.getElementById("root");
+const root = document.getElementById('root');
 render(
   <React.StrictMode>
     <App />
+  </React.StrictMode>,
+  root
   </React.StrictMode>,
   root
 );
