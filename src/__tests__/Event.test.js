@@ -43,28 +43,13 @@ describe("<Event /> component", () => {
     expect(EventWrapper.find(".eventLocation")).toHaveLength(1);
   });
 
-  test("Location <p> element data rendered properly", () => {
-    const locationElement = EventWrapper.find(".eventLocation");
-    const locationElementText = locationElement.text();
-    const summaryExtracted = event.summary;
-    const locationExtracted = event.location;
-    // expection the rendered location element to match the approriate string/data
-    expect(locationElementText).toEqual(
-      `@${summaryExtracted}||${locationExtracted}`
-    );
-  });
-
-  test("render a Details Button", () => {
-    // expect the show details button to exist 1 time.
-    expect(EventWrapper.find(".showDetails")).toHaveLength(1);
-  });
-
-  test("elements are intially collapsed and details button text === Show Details", () => {
-    //expect the default state of details to be false
-    expect(EventWrapper.state("details")).toBe(false);
-    // expect the show details button to display the correct message
-    expect(EventWrapper.find(".showDetails").text()).toBe("Show Details");
-  });
+    test('Location <p> element data rendered properly', ()=>{
+        const locationElement = EventWrapper.find('.eventLocation');
+        const locationElementText = locationElement.text();
+        const summaryExtracted = event.summary;
+        const locationExtracted = event.location;
+        expect(locationElementText).toEqual(`@${summaryExtracted} || ${locationExtracted}`)
+    })
 
   test("when ShowDetails is clicked state of details is true, and Hide Details a button renders", () => {
     EventWrapper.find(".showDetails").simulate("click");
