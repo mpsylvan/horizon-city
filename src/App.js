@@ -1,53 +1,54 @@
 import React, { Component } from "react";
 import EventList from "./EventList";
-import CitySearch from "./CitySearch";
-import NumberOfEvents from "./NumberOfEvents";
-import "./App.css";
-import "./nprogress.css";
-import { extractLocations, getEvents } from "./api";
+import CitySearch from './CitySearch';
+import NumberOfEvents from './NumberOfEvents';
+import './App.css';
+import { getEvents, extractLocations } from './api';
 
 // the root component
 
 class App extends Component {
+
   state = {
     events: [],
     locations: [],
-  };
+  }
 
   updateEvents = (location) => {
-    getEvents().then((events) => {
-      const locationEvents =
-        location === "all"
-          ? events
-          : events.filter((event) => event.location === location);
+    getEvents().then((events)=>{
+      const locationEvents = (location === "all") ? 
+        events: 
+        events.filter((event)=>event.location === location);
       this.setState({
-        events: locationEvents,
-      });
-    });
-  };
+        events: locationEvents, 
+      })
+    })
+  }
 
-  componentDidMount() {
+  componentDidMount(){
     this.mounted = true;
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
+    getEvents().then((events)=>{
+      if(this.mounted){
+        this.setState({
+          events, locations : extractLocations(events),
+        })
       }
-    });
+    })
+   }
+
+  componentWillUnmount(){
+    this.mounted = false
   }
 
-  componentWillUnmount() {
-    this.mounted = false;
-  }
-
-  render() {
+  render(){
     return (
       <div className="App">
-        <CitySearch
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
+        <CitySearch 
+          locations = {this.state.locations}
+          updateEvents = {this.updateEvents}
         />
         <NumberOfEvents />
-        <EventList events={this.state.events} />
+        <EventList events = {this.state.events} />
       </div>
     );
   }
