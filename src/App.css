@@ -36,6 +36,7 @@ p {
 }
 .showSuggestions {
   display: block;
+}
 .display-none {
   display: none;
 }
@@ -57,6 +58,7 @@ input[type="number"] {
 
 .city {
   width: 250px;
+}
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -73,7 +75,7 @@ input[type="number"] {
   width: 250px;
 }
 
-.CitySearch {
+
 .CitySearch {
   display: flex;
   flex-direction: column;
@@ -250,7 +252,8 @@ input[type="number"] {
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.2px;
-  font-family: "Roboto";
+  font-family: "Karla";
+}
 .google-btn {
   width: 184px;
   height: 42px;
@@ -301,6 +304,7 @@ input[type="number"] {
     max-width: 50%;
     min-width: auto;
     margin: 0 auto;
+  }
   .data-vis-wrapper .recharts-responsive-container {
     flex-basis: 50%;
     max-width: 50%;
