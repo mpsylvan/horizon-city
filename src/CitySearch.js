@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class CitySearch extends Component {
   // shorthand syntax for initializing state variables in class component
   state = {
-    query: "search for a city",
+    query: "",
     suggestions: [],
     showSuggestions: undefined,
   };
@@ -24,8 +24,7 @@ class CitySearch extends Component {
       query: suggestion,
       showSuggestions: false,
     });
-
-    this.props.updateEvents(suggestion);
+    this.props.updateEvents(suggestion, undefined);
   };
 
   render() {
@@ -52,7 +51,13 @@ class CitySearch extends Component {
               {suggestion}
             </li>
           ))}
-          <li key="all" onClick={() => this.handleItemClicked("all")}>
+          <li
+            key="all"
+            onClick={() => {
+              this.handleItemClicked("all");
+            }}
+          >
+            {" "}
             <b>See all cities</b>
           </li>
         </ul>
