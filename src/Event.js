@@ -29,10 +29,10 @@ class Event extends Component {
     render(){
         const {event} = this.props;
         return (
-            <>
+            <div className="eventCard"style={{border: "1px solid black", margin: "5px", background: "#7a8", color: "#fff"}}>
                 <h3 className="eventTitle">{event.summary}</h3>
                 <p className="eventTime">{event.start.dateTime}({event.start.timeZone})</p>
-                <p className="eventLocation">@{event.summary} || {event.location}</p>
+                <p className="eventLocation" style={{color: "#000"}}>@{event.summary} || {event.location}</p>
                 
                 {!this.state.details?
                     (
@@ -51,7 +51,7 @@ class Event extends Component {
                     )
                 }
                 
-            </>
+            </div>
         )
     }
 }
