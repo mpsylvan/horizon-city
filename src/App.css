@@ -37,12 +37,7 @@ p {
 .showSuggestions {
   display: block;
 }
-.display-none {
-  display: none;
-}
-.showSuggestions {
-  display: block;
-}
+
 
 input[type="text"],
 input[type="number"] {
@@ -112,13 +107,18 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 
-.event {
+.eventCard {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  /* transition:ease-in .4 scale; */
+}
+
+.eventCard:hover{
+  transform: scale(1.02);
 }
 
 .details-btn {
@@ -311,4 +311,8 @@ input[type="number"] {
     min-width: auto;
     margin: 0 auto;
   }
+  .EventList{
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
