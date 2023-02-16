@@ -66,7 +66,7 @@ describe("<Event /> component", () => {
       mockData[0].htmlLink
     );
     // expect the event description to have the correct data.
-    expect(EventWrapper.find(".eventDescription").text()).toBe(
+    expect(EventWrapper.find(".description").text()).toBe(
       mockData[0].description
     );
   });

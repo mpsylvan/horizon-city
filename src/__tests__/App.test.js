@@ -7,6 +7,7 @@ import NumberOfEvents from "../NumberOfEvents"
 import {extractLocations, getEvents} from "../api";
 import { mockData } from '../mock_data';
 
+
 // unit test scope for App component
 describe('<App /> component', ()=>{
 
@@ -65,12 +66,47 @@ describe('<App /> component integration', ()=>{
 
     test("get a list of all events when user selects see all", async ()=>{
         const AppWrapper = mount(<App />);
-        // grab ann array of all suggestion items being rendered.
-        const suggestionItems =AppWrapper.find(CitySearch).find(".suggestions li");
+        // grab an array of all suggestion items being rendered.
+        const suggestionItems = AppWrapper.find(CitySearch).find(".suggestions li");
         suggestionItems.at(suggestionItems.length -1).simulate("click");
         const allEvents = await getEvents();
         expect(AppWrapper.state("events")).toEqual(allEvents);
         AppWrapper.unmount();
     })
 
+    test("the value entered in the <NumberOfEvents > input field, changes events state, numberOfEvents state, and renders the respective amount of events", async ()=>{
+        const AppWrapper = mount(<App />);
+        const NOEWrapper = AppWrapper.find(NumberOfEvents);
+        const EventListWrapper = AppWrapper.find(EventList);
+        //simulates an input change in in the NumberOfEvents component triggered by adding in the number. 
+        await NOEWrapper.instance().handleInputChange({target: {value: 10}});
+        // expects that the state of numberOfEvents will switch to 8. 
+        expect(AppWrapper.state('numberOfEvents')).toEqual(10);
+        // expects that the events array will be shortened to only 8. 
+        expect(AppWrapper.state('events')).toHaveLength(10);
+        AppWrapper.unmount();
+        })
+    test("updating city search will render a new city but preserver the selected numberOfEvents ", async ()=>{
+        // mount the 3 full renders
+        const AppWrapper = mount(<App />);
+        const CitySearchWrapper = AppWrapper.find(CitySearch);
+        const NOEWrapper = AppWrapper.find(NumberOfEvents);
+        // arbitirary input value of 5
+        const eventObject = {target: {value: 5}}
+        // simluate the event object passed into instance method.
+        await NOEWrapper.instance().handleInputChange(eventObject);
+        // simulate one specific city being presented and clicked (lines 99 - 104)
+        const locations = extractLocations(mockData);
+        CitySearchWrapper.setState({suggestions: locations});
+        const suggestions = CitySearchWrapper.state('suggestions');
+        const selectedIndex = Math.floor(Math.random() * suggestions.length);
+        const selectedCity = suggestions[selectedIndex];
+        await CitySearchWrapper.instance().handleItemClicked(selectedCity);
+        //expect that selectedCity gets stored in App state variable 'selectedLocation'
+        expect(AppWrapper.state("selectedLocation")).toEqual(selectedCity);
+        //expect that the selected number of events will persist for the selected city.
+        expect(AppWrapper.state('events')).toHaveLength(eventObject.target.value);
+        AppWrapper.unmount();
+    })
+    
 })
