@@ -3,8 +3,6 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import App from "../App";
 import NumberOfEvents from "../NumberOfEvents";
-import { mockData } from "../mock_data";
-import { extractLocations } from "../api";
 
 const feature = loadFeature("./src/features/SpecifyNumberOfEvents.feature");
 
