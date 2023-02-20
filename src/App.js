@@ -70,7 +70,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ display: "flex", flexDirection: "column" }}>
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}

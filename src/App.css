@@ -38,7 +38,6 @@ p {
   display: block;
 }
 
-
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -69,12 +68,11 @@ input[type="number"] {
 .city {
   width: 250px;
 }
-
 
 .CitySearch {
   display: flex;
-  flex-direction: column;
-  flex-basis: 300px;
+  flex-direction: row;
+  flex-basis: 100px;
   max-width: 300px;
   margin: auto;
   position: relative;
@@ -82,11 +80,10 @@ input[type="number"] {
 
 .suggestions {
   width: 250px;
-  position: absolute;
   z-index: 2;
   align-self: center;
   margin: 0;
-  top: 43px;
+  top: 100px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -106,18 +103,29 @@ input[type="number"] {
 .suggestions > li:hover {
   background-color: #bcdcdb;
 }
-
+.NOE {
+  margin-top: 10px;
+}
+.EventList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .eventCard {
   padding: 10px 10px 35px;
-  margin-bottom: 10px;
-  text-align: left;
+  margin: 2px;
+  margin-bottom: 2px;
+  text-align: center;
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  border: "1px solid black";
+  margin: "5px";
+  background: #7a8;
+  color: "#fff";
   /* transition:ease-in .4 scale; */
 }
 
-.eventCard:hover{
+.eventCard:hover {
   transform: scale(1.02);
 }
 
@@ -162,11 +170,6 @@ input[type="number"] {
   grid-gap: 20px;
   padding: 20px;
   font-family: sans-serif;
-}
-
-.Alert {
-  position: fixed;
-  top: 20px;
 }
 
 .data-vis-wrapper {
@@ -293,8 +296,6 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-
-
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
     flex-direction: row;
@@ -311,8 +312,22 @@ input[type="number"] {
     min-width: auto;
     margin: 0 auto;
   }
-  .EventList{
+}
+
+@media (max-width: 700px) {
+  .EventList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media ((min-width: 700px) and (max-width: 1000px)) {
+  .EventList {
     grid-template-columns: 1fr 1fr;
   }
 }
 
+@media (min-width: 1300px) {
+  .EventList {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
