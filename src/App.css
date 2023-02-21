@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Karla:400);
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -293,7 +293,7 @@ input[type="number"] {
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.2px;
-  font-family: "Roboto";
+  font-family: "Karla";
 }
 
 @media only screen and (min-width: 992px) {
