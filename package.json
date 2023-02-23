@@ -73,5 +73,11 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mpsylvan/horizon-city/issues"
+  },
+  
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(axios|react-day-picker)/)"
+    ]
   }
 }
