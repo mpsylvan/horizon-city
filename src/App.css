@@ -1,4 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+#root {
+  background: #eef;
+}
+
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -120,7 +125,7 @@ input[type="number"] {
   position: relative;
   border: "1px solid black";
   margin: "5px";
-  background: #7a8;
+  background: rgb(53, 165, 225);
   color: "#fff";
   /* transition:ease-in .4 scale; */
 }
