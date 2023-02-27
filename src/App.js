@@ -20,16 +20,12 @@ import WelcomeScreen from "./WelcomeScreen";
 // the root component
 
 class App extends Component {
-  // root component has two key states: 1) an array of events 2) an array of locations.
-  // an updateEvents function is declared that updates that state of events to be either a full list of all events returned from the getEvents helper function
-  // or a filtered array that matches the location parameter passed in at the call site.
-  // this function gets passed through props to the citySearch component where it get's called each time a suggestion is clicked, and a location is loaded into the function.
   state = {
     events: [],
     locations: [],
     numberOfEvents: 20,
     selectedLocation: "all",
-    showWelcomeScreen: undefined, // flag for determining if / when to render
+    showWelcomeScreen: undefined, // flag for determining if / when to render Welcome Screen Component
   };
 
   // return a data array filled with objects created by : for every location in locations, run a tally of how many events have a matching location property, and then return that tally and the city string (without country) as 2x property object.
@@ -142,7 +138,7 @@ class App extends Component {
                 allowDecimals={false}
               />
               <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-              <Scatter data={this.getData()} fill="#8884d8" />
+              <Scatter data={this.getData()} fill="#3fc" />
             </ScatterChart>
           </ResponsiveContainer>
         </div>
