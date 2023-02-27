@@ -4,7 +4,7 @@ class CitySearch extends Component {
   // shorthand syntax for initializing state variables in class component
   state = {
     query: "",
-    suggestions: [],
+    suggestions: this.props.locations,
     showSuggestions: undefined,
     infoText: "",
   };
