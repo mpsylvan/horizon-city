@@ -24,8 +24,15 @@ class Event extends Component {
   };
 
   render() {
-    const genres = ["React", "JavaScript", "Node", "jQuery", "AngularJS"];
-    const colors = ["#ade", "#46b", "#2cc", "#58d", "#28f"];
+    const genres = [
+      "React",
+      "JavaScript",
+      "Node",
+      "jQuery",
+      "jQuery,",
+      "AngularJS",
+    ];
+    const colors = ["#ade", "#46b", "#2cc", "#58d", "#58d", "#28f"];
     const { event } = this.props;
     const genre = event.summary
       .split(" ")
