@@ -24,9 +24,18 @@ class Event extends Component {
   };
 
   render() {
+    const genres = ["React", "JavaScript", "Node", "jQuery", "AngularJS"];
+    const colors = ["#ade", "#46b", "#2cc", "#58d", "#28f"];
     const { event } = this.props;
+    const genre = event.summary
+      .split(" ")
+      .filter((word) => genres.includes(word))[0];
+
     return (
-      <div className="eventCard" style={{ margin: "5px" }}>
+      <div
+        className="eventCard"
+        style={{ background: colors[genres.indexOf(genre)], margin: "5px" }}
+      >
         <h3 className="eventTitle">{event.summary}</h3>
         <p className="eventTime">
           {event.start.dateTime}({event.start.timeZone})
