@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import utils from "./utils";
 
 /* 
 
@@ -32,7 +33,7 @@ class Event extends Component {
       "jQuery,",
       "AngularJS",
     ];
-    const colors = ["#ade", "#46b", "#2cc", "#58d", "#58d", "#28f"];
+    
     const { event } = this.props;
     const genre = event.summary
       .split(" ")
@@ -41,7 +42,7 @@ class Event extends Component {
     return (
       <div
         className="eventCard"
-        style={{ background: colors[genres.indexOf(genre)], margin: "5px" }}
+        style={{ background: utils.colors[genres.indexOf(genre)], margin: "5px" }}
       >
         <h3 className="eventTitle">{event.summary}</h3>
         <p className="eventTime">
