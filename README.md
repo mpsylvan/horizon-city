@@ -1,4 +1,18 @@
-# City events app leveraging Google Calendar API
+# React JS upcoming events UI leveraging Google Calendar API 
+
+# Application Features 
+
+- Serverless functions deployed using AWS Lambda. 
+- React Recharts visualization library
+- Performs Oauth and accesses Google Calender API via serverless functions
+- Jest test scripting for unit and integration testing
+- Enzyme for shallow rendering unit tests
+- Enzyme for full rendering integration tests
+- Puppeteer for user acceptance and end-to-end testing 
+- Progressive Web Application 
+
+
+# User Stories
 
 # Feature 1: Filter Events by City
 
