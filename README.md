@@ -1,4 +1,4 @@
-# Events Front End leveraging Google Calendar API 
+# React Calendar Events app leveraging Google Calendar API 
 
 # Application Features 
 
