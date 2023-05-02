@@ -2,9 +2,9 @@
 
 # Application Features 
 
-- Serverless functions deployed using AWS Lambda. 
+- Serverless functions deployed using AWS Lambda.
+- Performs Oauth and accesses Google Calender API via serverless functions 
 - React Recharts visualization library
-- Performs Oauth and accesses Google Calender API via serverless functions
 - Jest test scripting for unit and integration testing
 - Enzyme for shallow rendering unit tests
 - Enzyme for full rendering integration tests
